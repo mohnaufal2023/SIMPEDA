@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reborn Rich - Streaming</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 100%;
+        position: relative;
+      }
+
+      .header {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .back-button,
+      .bookmark,
+      .share {
+        color: white;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .movie-poster {
+        width: 100%;
+        height: 200px; /* Menambahkan tinggi tetap */
+        border-radius: 8px;
+        object-fit: cover; /* Memastikan gambar menutupi area dengan proporsi yang tepat */
+        object-position: center; /* Memastikan gambar tetap di tengah */
+      }
+      .movie-title {
+        font-size: 32px;
+        margin: 20px 0;
+      }
+
+      .duration {
+        color: #aaa;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        color: #aaa;
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+
+      .button-play {
+        width: 100%;
+        padding: 15px;
+        background-color: #0bcd3b;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .button-download {
+        width: 100%;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .quality-info {
+        text-align: center;
+        color: #aaa;
+        margin-top: 20px;
+      }
+
+      .logo {
+        width: 120px;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+      }
+
+      .logo-text {
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .slider-container {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slider {
+        display: flex;
+        width: 300%; /* 3 gambar x 100% */
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/logo pemko medan.png" alt="Logo" class="logo" />
+      <div class="logo-text">SISTEM INFORMASI MANAJEMEN PERANGKAT DAERAH KOTA MEDAN</div>
+
+      <div class="content">
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slide">
+              <img src="images/masjid raya medan.jpeg" alt="Slide 1" />
+            </div>
+            <div class="slide">
+              <img src="images/Maimun Palace Medan.jpeg" alt="Slide 2" />
+            </div>
+            <div class="slide">
+              <img src="images/Pos Indonesia.jpeg" alt="Slide 3" />
+            </div>
+          </div>
+        </div>
+        <h1 class="movie-title" style="color: green;">SIMPEDA</h1>
+       
+        <p class="description">Selamat Datang di Sistem Informasi Manajemen Perangkat Daerah, Lihat status pegawai negeri sipil dengan lebih mudah dan cepat serta selalu up to date</p>
+        <button class="button-play" onclick="window.location.href='menu.html'">KP 1 APRIL</button>
+        <button class="button-play" onclick="window.location.href='kp1juni.html'">KP 1 JUNI</button>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".slider");
+      let currentSlide = 0;
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % 3;
+        slider.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+      }
+
+      // Jalankan slider setiap 3 detik
+      setInterval(nextSlide, 3000);
+    </script>
+  </body>
+</html>
